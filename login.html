@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PawCare</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">PawCare</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="adoption.html">Adopt</a></li>
+            <li><a href="care.html">Care</a></li>
+        </ul>
+    </nav>
+
+    <div class="auth-container">
+        <!-- Login Form -->
+        <div class="auth-box" id="loginFormContainer">
+            <h2>Login</h2>
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+                <div class="auth-switch">
+                    Don't have an account? <a href="javascript:void(0)" onclick="toggleForms('signup')">Sign Up</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="auth-box" id="signupFormContainer" style="display: none;">
+            <h2>Create Account</h2>
+            <form id="signupForm" class="auth-form">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <button type="submit" class="submit-btn">Sign Up</button>
+                <div class="auth-switch">
+                    Already have an account? <a href="javascript:void(0)" onclick="toggleForms('login')">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html> 

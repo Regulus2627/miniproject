@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt a Pet - PawCare</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">PawCare</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="adoption.html" class="active">Adopt</a></li>
+            <li><a href="care.html">Care</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <main class="adoption-container">
+        <section class="adoption-header">
+            <h1>Adopt a Stray Pet</h1>
+            <p>Give a loving home to a stray animal in need</p>
+        </section>
+
+        <section class="filters">
+            <div class="filter-group">
+                <label for="species">Species:</label>
+                <select id="species">
+                    <option value="">All</option>
+                    <option value="Cat">Cats</option>
+                    <option value="Dog">Dogs</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="age">Age:</label>
+                <select id="age">
+                    <option value="">All</option>
+                    <option value="young">Young (0-1 year)</option>
+                    <option value="adult">Adult (1-7 years)</option>
+                    <option value="senior">Senior (7+ years)</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="size">Size:</label>
+                <select id="size">
+                    <option value="">All</option>
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="temperament">Temperament:</label>
+                <select id="temperament">
+                    <option value="">All</option>
+                    <option value="Friendly">Friendly</option>
+                    <option value="Calm">Calm</option>
+                    <option value="Energetic">Energetic</option>
+                    <option value="Shy">Shy</option>
+                </select>
+            </div>
+        </section>
+
+        <div id="petsGrid" class="pets-grid">
+            <!-- Pet cards will be dynamically added here -->
+        </div>
+
+        <section class="adoption-process">
+            <h2>Adoption Process</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <i class="fas fa-search"></i>
+                    <h3>1. Find Your Pet</h3>
+                    <p>Browse through our available pets and find the perfect match</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>2. Submit Application</h3>
+                    <p>Fill out our adoption application form</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-handshake"></i>
+                    <h3>3. Meet & Greet</h3>
+                    <p>Schedule a meeting with your potential pet</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-home"></i>
+                    <h3>4. Take Home</h3>
+                    <p>Complete the adoption and take your new friend home</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@pawcare.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 PawCare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="adoption.js"></script>
+</body>
+</html> 

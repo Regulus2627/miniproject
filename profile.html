@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - PawCare</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">PawCare</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="adoption.html">Adopt</a></li>
+            <li><a href="care.html">Care</a></li>
+            <li><a href="profile.html" class="active">Profile</a></li>
+        </ul>
+    </nav>
+
+    <main class="profile-container">
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <img src="https://via.placeholder.com/150" alt="Profile Picture" id="profilePicture">
+                <button class="change-avatar-btn" onclick="document.getElementById('avatarInput').click()">
+                    <i class="fas fa-camera"></i>
+                </button>
+                <input type="file" id="avatarInput" accept="image/*" style="display: none" onchange="updateProfilePicture(event)">
+            </div>
+            <div class="profile-info">
+                <h1 id="userName">Loading...</h1>
+                <p id="userEmail">Loading...</p>
+            </div>
+        </div>
+
+        <div class="profile-content">
+            <section class="profile-section">
+                <h2>Personal Information</h2>
+                <form id="profileForm" class="profile-form">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea id="address" name="address" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="save-button">Save Changes</button>
+                </form>
+            </section>
+
+            <section class="profile-section">
+                <h2>My Pets</h2>
+                <div class="pets-grid" id="myPetsGrid">
+                    <!-- Pets will be loaded dynamically -->
+                </div>
+                <button class="add-pet-button" onclick="showAddPetModal()">
+                    <i class="fas fa-plus"></i> Add New Pet
+                </button>
+            </section>
+
+            <section class="profile-section">
+                <h2>Upcoming Reminders</h2>
+                <div class="reminders-list" id="remindersList">
+                    <!-- Reminders will be loaded dynamically -->
+                </div>
+                <button class="add-reminder-button" onclick="showAddReminderModal()">
+                    <i class="fas fa-plus"></i> Add New Reminder
+                </button>
+            </section>
+
+            <section class="profile-section">
+                <h2>Adoption History</h2>
+                <div class="adoption-history" id="adoptionHistory">
+                    <!-- Adoption history will be loaded dynamically -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Add Pet Modal -->
+    <div id="addPetModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Add New Pet</h2>
+            <form id="addPetForm" onsubmit="addNewPet(event)">
+                <div class="form-group">
+                    <label for="petName">Pet Name</label>
+                    <input type="text" id="petName" required>
+                </div>
+                <div class="form-group">
+                    <label for="petSpecies">Species</label>
+                    <select id="petSpecies" required>
+                        <option value="Cat">Cat</option>
+                        <option value="Dog">Dog</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="petBreed">Breed</label>
+                    <input type="text" id="petBreed">
+                </div>
+                <div class="form-group">
+                    <label for="petAge">Age</label>
+                    <input type="number" id="petAge" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="petGender">Gender</label>
+                    <select id="petGender" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Unknown">Unknown</option>
+                    </select>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="submit-button">Add Pet</button>
+                    <button type="button" class="cancel-button" onclick="closeModal('addPetModal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Reminder Modal -->
+    <div id="addReminderModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Add New Reminder</h2>
+            <form id="addReminderForm" onsubmit="addNewReminder(event)">
+                <div class="form-group">
+                    <label for="reminderType">Reminder Type</label>
+                    <select id="reminderType" required>
+                        <option value="Vaccination">Vaccination</option>
+                        <option value="Food">Food</option>
+                        <option value="Grooming">Grooming</option>
+                        <option value="Medicine">Medicine</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="reminderDate">Date</label>
+                    <input type="date" id="reminderDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="reminderTime">Time</label>
+                    <input type="time" id="reminderTime" required>
+                </div>
+                <div class="form-group">
+                    <label for="reminderPet">Pet</label>
+                    <select id="reminderPet" required>
+                        <!-- Pets will be loaded dynamically -->
+                    </select>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="submit-button">Add Reminder</button>
+                    <button type="button" class="cancel-button" onclick="closeModal('addReminderModal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@pawcare.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 PawCare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="profile.js"></script>
+</body>
+</html> 

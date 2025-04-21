@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawCare - Your Pet's Best Friend</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">PawCare</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="adoption.html">Adopt</a></li>
+            <li><a href="care.html">Care</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero-section">
+        <h1>Welcome to PawCare</h1>
+        <p>Your one-stop solution for pet care and adoption</p>
+        <button onclick="window.location.href='login.html'" class="cta-button">Get Started</button>
+    </div>
+
+    <section id="adopt" class="section">
+        <h2>Find Your Perfect Companion</h2>
+        <div class="pet-grid">
+            <div class="pet-card">
+                <img src="https://in.images.search.yahoo.com/images/view;_ylt=AwrPpfM3muln0twBkxe9HAx.;_ylu=c2VjA3NyBHNsawNpbWcEb2lkA2FjYTIwNmFhYjlkZDJmNjVjMjRmYTYwMDEzNDhmNTA3BGdwb3MDMTMEaXQDYmluZw--?back=https%3A%2F%2Fin.images.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Dimage%2Bof%2Bcute%2Bkitten%26type%3DE210IN1357G0%26fr%3Dmcafee%26fr2%3Dpiv-web%26tab%3Dorganic%26ri%3D13&w=1088&h=821&imgurl=images6.fanpop.com%2Fimage%2Fphotos%2F41500000%2FCute-Little-Kitten-kittens-41501030-1088-821.jpg&rurl=https%3A%2F%2Fwww.fanpop.com%2Fclubs%2Fkittens%2Fimages%2F41501030%2Ftitle%2Fcute-little-kitten-photo&size=572KB&p=image+of+cute+kitten&oid=aca206aab9dd2f65c24fa6001348f507&fr2=piv-web&fr=mcafee&tt=Cute+Little+Kitten+-+Kittens+Photo+%2841501030%29+-+Fanpop&b=0&ni=21&no=13&ts=&tab=organic&sigr=KHNBAzJixHxK&sigb=q94JTMRM6bi5&sigi=_fABG0L5Tusr&sigt=bghwJzYTYcAx&.crumb=WOETIFCPmQO&fr=mcafee&fr2=piv-web&type=E210IN1357G0" alt="Cat">
+                <h3>Luna</h3>
+                <p>2 years old • Female • Cat</p>
+                <button class="adopt-button">Adopt Me</button>
+            </div>
+            <div class="pet-card">
+                <img src="https://placedog.net/300/200" alt="Dog">
+                <h3>Max</h3>
+                <p>1 year old • Male • Dog</p>
+                <button class="adopt-button">Adopt Me</button>
+            </div>
+            <div class="pet-card">
+                <img src="https://placekitten.com/300/200" alt="Cat">
+                <h3>Bella</h3>
+                <p>3 years old • Female • Cat</p>
+                <button class="adopt-button">Adopt Me</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="care" class="section">
+        <h2>Pet Care Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-syringe"></i>
+                <h3>Vaccination</h3>
+                <p>Keep your pet healthy with regular vaccinations</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-utensils"></i>
+                <h3>Nutrition</h3>
+                <p>Balanced diet plans for your pet</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-bath"></i>
+                <h3>Grooming</h3>
+                <p>Professional grooming services</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reminders" class="section">
+        <h2>Pet Care Reminders</h2>
+        <div class="reminder-form">
+            <form id="reminderForm">
+                <div class="form-group">
+                    <label for="reminderType">Reminder Type</label>
+                    <select id="reminderType">
+                        <option value="vaccine">Vaccination</option>
+                        <option value="food">Food</option>
+                        <option value="grooming">Grooming</option>
+                        <option value="medicine">Medicine</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="reminderDate">Date</label>
+                    <input type="date" id="reminderDate">
+                </div>
+                <div class="form-group">
+                    <label for="reminderTime">Time</label>
+                    <input type="time" id="reminderTime">
+                </div>
+                <button type="submit" class="submit-button">Set Reminder</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@pawcare.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 PawCare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html> 
